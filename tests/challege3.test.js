@@ -3,19 +3,6 @@ import * as module from "../challenge3.js";
 
 const test = new Test();
 
-// function test_palindrome_odd() {
-//     const input_str = "katak";
-//     const isPalindrom = isPalindrome(input_str);
-//     const expectedOutput = true;
-//     assertEqual(isPalindrom, expectedOutput);
-//   }
-//   test_palindrome_odd();
-
-// function test_foo() {
-//   module.foo();
-//   assert(true);
-// }
-// test_foo();
 function test_draw() {
   const height = 3;
   const result = module.drawRightTriangle(height);
