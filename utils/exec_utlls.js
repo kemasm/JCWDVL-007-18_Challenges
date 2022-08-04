@@ -4,15 +4,15 @@ export const exec = (executedFunction) => {
     args[index] = val;
   });
 
-  let input = args[2];
+  let inputs = args.slice(2);
 
-  if (!input) {
+  if (!inputs) {
     let scriptName = "exec.js";
 
     console.log(
       `Masukkan string yang ingin diperiksa.\nContoh penggunaan:\nnode .\\${scriptName} katak\nnode .\\${scriptName} "kasur rusak"`
     );
   } else {
-    console.log(executedFunction(String(args[2])));
+    console.log(executedFunction(...inputs));
   }
 };
