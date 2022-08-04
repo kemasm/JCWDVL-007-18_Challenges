@@ -16,6 +16,27 @@ export class Challenge2Test extends Test {
     this.assertEqual(expectedOutput, result);
   }
 
+  test_negative_case1() {
+    const input = -1;
+    const expectedOutput = 0;
+    const result = module.persistance(input);
+    this.assertEqual(expectedOutput, result);
+  }
+
+  test_negative_case2() {
+    const input = -12;
+    const expectedOutput = 1;
+    const result = module.persistance(input);
+    this.assertEqual(expectedOutput, result);
+  }
+
+  test_negative_case3() {
+    const input = -39;
+    const expectedOutput = 3;
+    const result = module.persistance(input);
+    this.assertEqual(expectedOutput, result);
+  }
+
   test_given_test_case() {
     const input = 39;
     const expectedOutput = 3;
