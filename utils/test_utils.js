@@ -32,6 +32,6 @@ export class Test {
       func();
     }
 
-    console.log("\nOK");
+    console.log(`\n${this.constructor.name} OK`);
   }
 }

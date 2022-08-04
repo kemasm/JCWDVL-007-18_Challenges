@@ -8,5 +8,3 @@ export class Challenge2Test extends Test {
     this.assertEqual(expectedOutput, result);
   }
 }
-
-new Challenge2Test().run();
