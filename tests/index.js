@@ -4,13 +4,15 @@ import * as HashtagTest from "./GenerateHashtag.test.js";
 import * as AlphabetPositionTest from "./AlphabetPosition.test.js";
 import * as FindOutlierTest from "./FindOutlier.test.js";
 import * as HowManyNumbers3Test from "./HowManyNumbers3.test.js";
+import * as AnagramsTest from "./WhereMyAnagramAt.test.js";
 
 const testToRun = [
   // SequenceTest,
   // HashtagTest,
   // AlphabetPositionTest,
   // FindOutlierTest,
-  HowManyNumbers3Test,
+  // HowManyNumbers3Test,
+  AnagramsTest,
 ];
 
 for (let testModule of testToRun) {
