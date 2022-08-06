@@ -44,5 +44,3 @@ export class FindOutlierTest extends Test {
     this.assertEqual(expectedOutput, result);
   }
 }
-
-new FindOutlierTest().run();

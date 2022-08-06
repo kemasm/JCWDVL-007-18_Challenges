@@ -74,5 +74,3 @@ export class generateHashtagTest extends Test {
     this.assertEqual(expectedOutput, result);
   }
 }
-
-new generateHashtagTest().run();

@@ -18,7 +18,6 @@ export class IsInSeqTest extends Test {
     this.assertEqual(expectedOutput, result);
   }
 }
-new IsInSeqTest().run();
 
 export class CreateSeqTest extends Test {
   test_sanity() {
@@ -42,7 +41,6 @@ export class CreateSeqTest extends Test {
     this.assertEqual(expectedOutput, result);
   }
 }
-new CreateSeqTest().run();
 
 export class SqCubRevPrimeTest extends Test {
   test_sanity() {
@@ -59,4 +57,3 @@ export class SqCubRevPrimeTest extends Test {
     this.assertEqual(expectedOutput, result);
   }
 }
-new SqCubRevPrimeTest().run();

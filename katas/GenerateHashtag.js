@@ -1,4 +1,4 @@
-export function generateHashtag(str) {
+function generateHashtag(str) {
   let result = str.split(" ").filter((t) => t !== "");
 
   if (!result) {
@@ -19,3 +19,5 @@ export function generateHashtag(str) {
 
   return `#${result}`;
 }
+
+export { generateHashtag };

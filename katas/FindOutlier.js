@@ -1,5 +1,5 @@
 // https://www.codewars.com/kata/5526fc09a1bbd946250002dc/train/javascript
-export function findOutlier(integers) {
+function findOutlier(integers) {
   const el1 = integers[0] % 2 === 0 ? 1 : 0;
   const el2 = integers[1] % 2 === 0 ? 1 : 0;
   const el3 = integers[2] % 2 === 0 ? 1 : 0;
@@ -16,3 +16,5 @@ export function findOutlier(integers) {
     }
   }
 }
+
+export { findOutlier };

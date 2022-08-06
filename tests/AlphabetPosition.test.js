@@ -59,5 +59,3 @@ export class AlphabetPositionTest extends Test {
     this.assertEqual(expectedOutput, result);
   }
 }
-
-new AlphabetPositionTest().run();
