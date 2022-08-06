@@ -1,44 +1,35 @@
-function isValid(nums, desiredSum) {
-  for (let idx = 0; idx < nums.length - 1; idx++) {
-    if (nums[idx] > nums[idx + 1]) return false;
+function combNRep(arr, x) {
+  let pool = [...new Set(arr)];
+  let n = pool.length;
+  if (!n && x) return;
+  let indices = Array(x).fill(0);
+  let result = [];
+  result.push(indices.map((i) => pool[i]));
+  while (true) {
+    let cond = false;
+    let i;
+    for (i of [...Array(x).keys()].reverse()) {
+      if (indices[i] != n - 1) {
+        cond = true;
+        break;
+      }
+    }
+    if (!cond) {
+      return result;
+    }
+    let z = Array(x - i).fill(indices[i] + 1);
+    indices = indices.slice(0, i).concat(z);
+    result.push(indices.map((i) => pool[i]));
   }
-
-  return nums.map((i) => parseInt(i)).reduce((a, b) => a + b) == desiredSum;
 }
 
 function findAll(sum, amountDigits) {
-  let div = sum / amountDigits;
-  if (div < 1 || div > 9) {
-    return [];
-  }
-
-  if (div == 9) {
-    return [1, "9".repeat(amountDigits), "9".repeat(amountDigits)];
-  }
-
-  if (div == 1) {
-    return [1, "1".repeat(amountDigits), "1".repeat(amountDigits)];
-  }
-
-  let currentVal = parseInt("1".repeat(amountDigits - 1) + "2");
-  let endVal = parseInt("8" + "9".repeat(amountDigits - 1));
-
-  let vals = [];
-  while (currentVal <= endVal) {
-    let val = currentVal.toString();
-    let nums = val.split("");
-
-    if (isValid(nums, sum)) {
-      vals.push(val);
-    }
-    currentVal++;
-  }
-
-  let vals_length = vals.length;
-  if (!vals_length) return [];
-
-  console.log(vals);
-  return [vals.length, vals[0], vals[vals_length - 1]];
+  let combs = combNRep([1, 2, 3, 4, 5, 6, 7, 8, 9], amountDigits);
+  let target = combs
+    .filter((comb) => comb.reduce((a, b) => a + b) == sum)
+    .map((comb) => comb.join(""));
+  if (!target.length) return [];
+  return [target.length, target[0], target[target.length - 1]];
 }
 
-export { findAll };
+export { findAll, combNRep };
