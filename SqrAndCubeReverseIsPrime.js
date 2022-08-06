@@ -20,7 +20,7 @@ const reverseNum = (num) => {
   return parseInt(num.toString().split("").reverse().join(""));
 };
 
-const isInSeq = (num) => {
+export const isInSeq = (num) => {
   return isPrime(reverseNum(num ** 2)) && isPrime(reverseNum(num ** 3));
 };
 
