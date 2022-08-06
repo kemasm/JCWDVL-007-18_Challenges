@@ -1,5 +1,5 @@
 import { Test } from "../utils/test_utils.js";
-import * as module from "../SqrAndCubeReverseIsPrime.js";
+import * as module from "../katas/SqrAndCubeReverseIsPrime.js";
 
 export class IsInSeqTest extends Test {
   test_is_in_seq_base_case() {

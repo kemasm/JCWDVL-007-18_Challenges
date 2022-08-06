@@ -1,5 +1,5 @@
 import { Test } from "../utils/test_utils.js";
-import * as module from "../AlphabetPosition.js";
+import * as module from "../katas/AlphabetPosition.js";
 
 export class AlphabetPositionTest extends Test {
   test_sanity() {

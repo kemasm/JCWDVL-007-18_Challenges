@@ -1,5 +1,5 @@
 import { Test } from "../utils/test_utils.js";
-import * as module from "../GenerateHashtag.js";
+import * as module from "../katas/GenerateHashtag.js";
 
 export class generateHashtagTest extends Test {
   test_sanity() {
