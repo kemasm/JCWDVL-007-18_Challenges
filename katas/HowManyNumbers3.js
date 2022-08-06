@@ -1,40 +1,44 @@
-function hasLowerDigitAfterwards(num) {
-  let nums = num
-    .toString()
-    .split("")
-    .map((i) => parseInt(i));
-
+function isValid(nums, desiredSum) {
   for (let idx = 0; idx < nums.length - 1; idx++) {
     if (nums[idx] > nums[idx + 1]) return false;
   }
-  return true;
+
+  return nums.map((i) => parseInt(i)).reduce((a, b) => a + b) == desiredSum;
 }
 
-function sumOfNumChars(num) {
-  return num
-    .toString()
-    .split("")
-    .map((i) => parseInt(i))
-    .reduce((a, b) => a + b);
+function findAll(sum, amountDigits) {
+  let div = sum / amountDigits;
+  if (div < 1 || div > 9) {
+    return [];
+  }
+
+  if (div == 9) {
+    return [1, "9".repeat(amountDigits), "9".repeat(amountDigits)];
+  }
+
+  if (div == 1) {
+    return [1, "1".repeat(amountDigits), "1".repeat(amountDigits)];
+  }
+
+  let currentVal = parseInt("1".repeat(amountDigits - 1) + "2");
+  let endVal = parseInt("8" + "9".repeat(amountDigits - 1));
+
+  let vals = [];
+  while (currentVal <= endVal) {
+    let val = currentVal.toString();
+    let nums = val.split("");
+
+    if (isValid(nums, sum)) {
+      vals.push(val);
+    }
+    currentVal++;
+  }
+
+  let vals_length = vals.length;
+  if (!vals_length) return [];
+
+  console.log(vals);
+  return [vals.length, vals[0], vals[vals_length - 1]];
 }
 
-function findAll(desiredSum, amountDigit) {
-  // your code here
-  let startVal = parseInt("1".repeat(amountDigit));
-  let endVal = parseInt("9".repeat(amountDigit));
-
-  let vals = [...Array(endVal - startVal + 1).keys()]
-    .map((i) => i + startVal)
-    .filter((num) => hasLowerDigitAfterwards(num))
-    .filter((num) => sumOfNumChars(num) === desiredSum);
-
-  if (!vals.length) return [];
-
-  return [
-    vals.length,
-    vals.slice(0)[0].toString(),
-    vals.slice(-1)[0].toString(),
-  ];
-}
-
-export { findAll, hasLowerDigitAfterwards, sumOfNumChars };
+export { findAll };
