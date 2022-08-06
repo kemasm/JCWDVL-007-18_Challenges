@@ -7,10 +7,17 @@ export class Test {
   }
 
   assertEqual(result, expectedOutput) {
-    this.assert(
-      result === expectedOutput,
-      `${result} is not equal with ${expectedOutput}`
-    );
+    let condition = result === expectedOutput;
+
+    if (expectedOutput.constructor === Array) {
+      condition =
+        result.length === expectedOutput.length &&
+        result.every((value, index) => value === expectedOutput[index]);
+    }
+
+    let errorMsg = `${result} is not equal with ${expectedOutput}`;
+
+    this.assert(condition, errorMsg);
   }
 
   get_all_functions() {
@@ -32,6 +39,6 @@ export class Test {
       func();
     }
 
-    console.log("\nOK");
+    console.log(`\n${this.constructor.name} OK`);
   }
 }
