@@ -1,7 +1,7 @@
 import { Test } from "../utils/test_utils.js";
 import * as module from "../katas/GenerateHashtag.js";
 
-export class generateHashtagTest extends Test {
+class GenerateHashtagTest extends Test {
   test_sanity() {
     const expectedOutput = "#A";
     const result = module.generateHashtag("a");
@@ -74,3 +74,5 @@ export class generateHashtagTest extends Test {
     this.assertEqual(expectedOutput, result);
   }
 }
+
+export { GenerateHashtagTest };

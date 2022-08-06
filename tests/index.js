@@ -1,14 +1,16 @@
 import { Test } from "../utils/test_utils.js";
-import * as sequenceTest from "./SqrAndCubeReverseIsPrime.test.js";
-import * as hashtagTest from "./GenerateHashtag.test.js";
-import * as alphabetPositionTest from "./AlphabetPosition.test.js";
-import * as findOutlierTest from "./FindOutlier.test.js";
+import * as SequenceTest from "./SqrAndCubeReverseIsPrime.test.js";
+import * as HashtagTest from "./GenerateHashtag.test.js";
+import * as AlphabetPositionTest from "./AlphabetPosition.test.js";
+import * as FindOutlierTest from "./FindOutlier.test.js";
+import * as HowManyNumbers3Test from "./HowManyNumbers3.test.js";
 
 const testToRun = [
-  sequenceTest,
-  hashtagTest,
-  alphabetPositionTest,
-  findOutlierTest,
+  // SequenceTest,
+  // HashtagTest,
+  // AlphabetPositionTest,
+  // FindOutlierTest,
+  HowManyNumbers3Test,
 ];
 
 for (let testModule of testToRun) {
