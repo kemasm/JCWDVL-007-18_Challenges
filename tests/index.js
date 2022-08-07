@@ -5,6 +5,7 @@ import * as AlphabetPositionTest from "./AlphabetPosition.test.js";
 import * as FindOutlierTest from "./FindOutlier.test.js";
 import * as HowManyNumbers3Test from "./HowManyNumbers3.test.js";
 import * as AnagramsTest from "./WhereMyAnagramAt.test.js";
+import * as SumDifRefTest from "./SumDifRef.test.js";
 
 const testToRun = [
   // SequenceTest,
@@ -12,7 +13,8 @@ const testToRun = [
   // AlphabetPositionTest,
   // FindOutlierTest,
   // HowManyNumbers3Test,
-  AnagramsTest,
+  // AnagramsTest,
+  SumDifRefTest,
 ];
 
 for (let testModule of testToRun) {
