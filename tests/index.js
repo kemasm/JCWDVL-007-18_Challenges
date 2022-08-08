@@ -6,6 +6,7 @@ import * as FindOutlierTest from "./FindOutlier.test.js";
 import * as HowManyNumbers3Test from "./HowManyNumbers3.test.js";
 import * as AnagramsTest from "./WhereMyAnagramAt.test.js";
 import * as SumDifRefTest from "./SumDifRef.test.js";
+import * as NextBiggerNumberTest from "./NextBiggerNumber.test.js";
 
 const testToRun = [
   // SequenceTest,
@@ -14,7 +15,8 @@ const testToRun = [
   // FindOutlierTest,
   // HowManyNumbers3Test,
   // AnagramsTest,
-  SumDifRefTest,
+  // SumDifRefTest,
+  NextBiggerNumberTest,
 ];
 
 for (let testModule of testToRun) {
