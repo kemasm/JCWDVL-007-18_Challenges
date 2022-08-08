@@ -8,16 +8,16 @@ export class Test {
 
   assertEqual(result, expectedOutput) {
     let condition = result === expectedOutput;
-    let errorMsg = `${result} is not equal with ${expectedOutput}`;
 
-    if (expectedOutput === undefined) {
-      this.assert(condition, errorMsg);
-    } else if (expectedOutput.constructor === Array) {
+    if (expectedOutput.constructor === Array) {
       condition =
         result.length === expectedOutput.length &&
         result.every((value, index) => value === expectedOutput[index]);
-      this.assert(condition, errorMsg);
-    } else this.assert(condition, errorMsg);
+    }
+
+    let errorMsg = `${result} is not equal with ${expectedOutput}`;
+
+    this.assert(condition, errorMsg);
   }
 
   get_all_functions() {
