@@ -23,6 +23,13 @@ export class Challenge2Test extends Test {
     this.assertEqual(expectedOutput, result);
   }
 
+  test_simple_case2() {
+    const input = [10, 5, 7, 6, 4, 6, 3, 1, 5, 8, 9, 7];
+    const exOut = [10, 5, "-", 7, 6, 4, 6, 3, "-", 1, "-", 5, 8, 9, "-", 7];
+    const result = module.oddSliceOdd(input);
+    this.assertEqual(exOut, result);
+  }
+
   test_given_test_case() {
     const input = [3, 9, 2, 3, 4, 7, 5, 6];
     const expectedOutput = [3, "-", 9, 2, 3, 4, 7, "-", 5, 6];
