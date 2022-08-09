@@ -1,3 +1,5 @@
+//https://www.codewars.com/kata/56b2abae51646a143400001d/train/javascript
+
 // let arr = [...Array(64).keys()];
 // console.log(arr);
 // let left = arr.slice(0, arr.length / 2);
