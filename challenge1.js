@@ -13,7 +13,6 @@ function getNextChar(char, n = 1) {
 
   let charList = "abcdefghijklmnopqrstuvwxyz";
   if (isUpper) charList = charList.toUpperCase();
-
   idx = charList.indexOf(char);
   if (idx != -1) return _getChar(charList, idx + n);
 

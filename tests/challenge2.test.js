@@ -5,7 +5,7 @@ export class Challenge2Test extends Test {
   test_given_test_case() {
     const input = "bar";
     const expectedOutput = "bar";
-    const result = module.echo(input);
+    const result = module.inversions(input);
     this.assertEqual(expectedOutput, result);
   }
 }
