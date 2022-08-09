@@ -9,7 +9,7 @@ export class Challenge1Test extends Test {
     this.assertEqual(expectedOutput, result);
   }
 
-  test_given_test_case() {
+  test_given_test_case1() {
     const input = "a";
     const expectedOutput = "b";
     const result = module.aplhaForward(input);
@@ -54,6 +54,20 @@ export class Challenge1Test extends Test {
   test_given_test_case7() {
     const input = "Abc Def!";
     const expectedOutput = "Bcd Efg!";
+    const result = module.aplhaForward(input);
+    this.assertEqual(expectedOutput, result);
+  }
+
+  test_given_test_case8() {
+    const input = "1";
+    const expectedOutput = "2";
+    const result = module.aplhaForward(input);
+    this.assertEqual(expectedOutput, result);
+  }
+
+  test_given_test_case9() {
+    const input = "1 + 1 = 2";
+    const expectedOutput = "2 + 2 = 3";
     const result = module.aplhaForward(input);
     this.assertEqual(expectedOutput, result);
   }
