@@ -5,6 +5,7 @@
 // [4, 1, 2, 3] => 3 inversions = 4 dan 1, 4 dan 2, 4 dan 3
 // [3, 1, 2, 4] => 2 inversions = 3 dan 1, 3 dan 2
 function inversions(arr) {
+  let inputArr = arr.slice();
   let inverseArr = [];
   let isNotSorted = true;
   while (isNotSorted) {
@@ -20,10 +21,9 @@ function inversions(arr) {
     }
   }
 
-  let outputFmt = `${inverseArr.length} inversions = `;
-  for (let inverse of inverseArr) {
-    outputFmt += `${inverse[0]} dan ${inverse[1]}, `;
-  }
+  let inputToStr = `[${inputArr.join(", ")}]`;
+  let inverseArrStr = inverseArr.map((x) => `${x[0]} dan ${x[1]}`).join(", ");
+  let outputFmt = `${inputToStr} => ${inverseArr.length} inversions = ${inverseArrStr}`;
   return outputFmt;
 }
 
@@ -32,6 +32,6 @@ let inputs = [
   [4, 1, 2, 3],
   [3, 1, 2, 4],
 ];
-for (let input of inputs) console.log(`[${input}] => ${inversions(input)}`);
+for (let input of inputs) console.log(inversions(input));
 
 export { inversions };
