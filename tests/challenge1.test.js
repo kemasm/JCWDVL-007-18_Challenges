@@ -3,10 +3,9 @@ import * as module from "../challenge1.js";
 
 export class Challenge1Test extends Test {
   test_given_test_case() {
+    const input = "bar";
     const expectedOutput = "bar";
-    const result = module.foo();
+    const result = module.echo(input);
     this.assertEqual(expectedOutput, result);
   }
 }
-
-new Challenge1Test().run();
