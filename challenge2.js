@@ -1,4 +1,4 @@
-// concate middle (no method)
+// concate middle (no js library functions)
 // buatlah function untuk mendapatkan huruf/angka/karakter yang berada di tengah suatu deret kata
 
 // Ex.  Input:  'Ryan'
@@ -20,29 +20,30 @@ function getMiddle(buffer, bufferLength) {
 }
 
 function concatMiddle(input) {
-  let middles = [];
+  let middles = "";
 
   let bufferLength = 0;
   let buffer = "";
 
-  for (let char of input) {
-    if (char === " ") {
-      middles.push(getMiddle(buffer, bufferLength));
-      buffer = "";
-      bufferLength = 0;
-    } else {
+  let isNotEndofInput = true;
+  let idx = 0;
+  while (isNotEndofInput) {
+    let char = input[idx];
+    if (char !== " ") {
       buffer += char;
       bufferLength += 1;
+    } else {
+      middles += getMiddle(buffer, bufferLength);
+      buffer = "";
+      bufferLength = 0;
     }
+    idx += 1;
+    isNotEndofInput = input[idx] !== undefined;
   }
 
-  middles.push(getMiddle(buffer, bufferLength));
+  middles += getMiddle(buffer, bufferLength);
 
-  let result = "";
-  for (let middle of middles) {
-    result += middle;
-  }
-  return result;
+  return middles;
 }
 
 let input = "Hello, I'm Ryan!";
