@@ -1,25 +1,79 @@
-let transpose = function (matrix) {
-  return matrix[0].map((col, i) => matrix.map((row) => row[i]));
-};
-
-let mirror = function (matrix) {
-  return matrix.map((row) => row.reverse());
-};
-
-let rotate = function (matrix, countRotate, isLeft = true) {
-  countRotate %= 4;
-
-  let counter = 0;
-  while (counter < countRotate) {
-    if (isLeft) {
-      matrix = transpose(mirror(matrix));
-    } else {
-      matrix = mirror(transpose(matrix));
-    }
-    counter++;
+class SquareMatrix {
+  constructor(size) {
+    const row = Array(size)
+      .fill(1)
+      .map((val, idx) => idx + val);
+    this.value = row.map((val, idx) => row.map((x) => x + row.length * idx));
+    this.origValue = structuredClone(this.value);
   }
 
-  return matrix;
-};
+  reset = function () {
+    this.value = structuredClone(this.origValue);
+  };
 
-export { rotate };
+  _transpose = function () {
+    this.value = this.value[0].map((col, i) => this.value.map((row) => row[i]));
+  };
+
+  _mirror = function () {
+    this.value = this.value.map((row) => row.reverse());
+  };
+
+  _rotate = function (isLeft, countRotate) {
+    const operations = {
+      true: () => {
+        this._mirror();
+        this._transpose();
+      },
+      false: () => {
+        this._transpose();
+        this._mirror();
+      },
+    };
+
+    let operation = operations[isLeft];
+    let counter = 0;
+    while (counter < countRotate) {
+      operation();
+      counter++;
+    }
+  };
+
+  rotate = function (isLeft = true, countRotate = 1) {
+    countRotate %= 4;
+
+    // left rotate 3 times is equal to a single right rotation, vice versa
+    if (countRotate === 3) {
+      countRotate = 1;
+      isLeft = !isLeft;
+    }
+
+    this._rotate(isLeft, countRotate);
+  };
+
+  _sort = function (idx, isRow, isAsc) {
+    const sortFuncs = {
+      true: (a, b) => a - b,
+      false: (a, b) => b - a,
+    };
+    const sortFunc = sortFuncs[isAsc];
+
+    if (isRow) {
+      this.value[idx].sort(sortFunc);
+    } else {
+      const arr = this.value.map((row) => row[idx]);
+      arr.sort(sortFunc);
+      this.value.forEach((row, colIdx) => (row[idx] = arr[colIdx]));
+    }
+  };
+
+  sortRow = function (idx, isAsc) {
+    this._sort(idx, true, isAsc);
+  };
+
+  sortCol = function (idx, isAsc) {
+    this._sort(idx, false, isAsc);
+  };
+}
+
+export { SquareMatrix };

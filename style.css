@@ -1,0 +1,16 @@
+table,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+td {
+  width: 50px;
+  text-align: center;
+}
+
+button.active {
+  background-color: darkgrey;
+  color: lightgrey;
+  border-radius: 0.3em;
+}
