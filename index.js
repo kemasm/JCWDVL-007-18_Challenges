@@ -23,8 +23,11 @@ function transpose(matrix) {
 }
 
 function rotate(matrix, direction) {
-  if (direction === "left") return transpose(mirror(matrix));
-  else return mirror(transpose(matrix));
+  if (direction === "left") {
+    return transpose(mirror(matrix));
+  } else if (direction === "right") {
+    return mirror(transpose(matrix));
+  }
 }
 
 matrix = rotate(matrix, "left");
