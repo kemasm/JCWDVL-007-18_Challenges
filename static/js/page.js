@@ -1,4 +1,4 @@
-import { SquareMatrix } from "./matrix.js";
+import { Matrix } from "./matrix.js";
 
 const onclickBtnEvent = function (page) {
   const funcs = {
@@ -37,13 +37,13 @@ const onclickBtnEvent = function (page) {
 
 class Page {
   constructor(matrixVal) {
-    this.MATRIX_VAL_ORIG = structuredClone(matrixVal);
-    this.matrix = new SquareMatrix(matrixVal);
+    this.MATRIX_VAL_ORIG = JSON.parse(JSON.stringify(matrixVal));
+    this.matrix = new Matrix(matrixVal);
   }
 
   reset = function () {
-    const matrixVal = structuredClone(this.MATRIX_VAL_ORIG);
-    this.matrix = new SquareMatrix(matrixVal);
+    const matrixVal = JSON.parse(JSON.stringify(this.MATRIX_VAL_ORIG));
+    this.matrix = new Matrix(matrixVal);
     this.drawMatrix();
 
     [...document.getElementsByClassName("sort-btn")].forEach((btn) => {

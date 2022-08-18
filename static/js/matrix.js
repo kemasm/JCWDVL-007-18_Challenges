@@ -68,4 +68,4 @@ class Matrix {
   };
 }
 
-export { Matrix as SquareMatrix };
+export { Matrix };
