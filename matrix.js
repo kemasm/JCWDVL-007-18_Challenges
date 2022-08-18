@@ -59,11 +59,11 @@ class Matrix {
     }
   };
 
-  sortRow = function (idx, isAsc) {
+  sortRow = function (idx, isAsc = true) {
     this._sort(idx, true, isAsc);
   };
 
-  sortCol = function (idx, isAsc) {
+  sortCol = function (idx, isAsc = true) {
     this._sort(idx, false, isAsc);
   };
 }
