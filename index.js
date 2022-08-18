@@ -1,4 +1,4 @@
-import { Page } from "./page.js";
+import { Page } from "./static/js/page.js";
 
 // create 4 x 4 matrix filled with num 1 to 16
 const size = 4;
