@@ -1,15 +1,7 @@
-class SquareMatrix {
-  constructor(size) {
-    const row = Array(size)
-      .fill(1)
-      .map((val, idx) => idx + val);
-    this.value = row.map((val, idx) => row.map((x) => x + row.length * idx));
-    this.origValue = structuredClone(this.value);
+class Matrix {
+  constructor(twoDimentionalArr) {
+    this.value = twoDimentionalArr;
   }
-
-  reset = function () {
-    this.value = structuredClone(this.origValue);
-  };
 
   _transpose = function () {
     this.value = this.value[0].map((col, i) => this.value.map((row) => row[i]));
@@ -76,4 +68,4 @@ class SquareMatrix {
   };
 }
 
-export { SquareMatrix };
+export { Matrix as SquareMatrix };
