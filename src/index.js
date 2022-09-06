@@ -1,13 +1,27 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import reportWebVitals from "./reportWebVitals";
+import { TopNavBar } from "./components/topNavbar.jsx";
+import {
+  Carousel,
+  About,
+  TourDates,
+  Contact,
+  Blog,
+} from "./components/content.jsx";
+import { Footer } from "./components/footer.jsx";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <TopNavBar />
+    <Carousel />
+    <About />
+    <TourDates />
+    <Contact />
+    <Blog />
+    <Footer />
   </React.StrictMode>
 );
 
